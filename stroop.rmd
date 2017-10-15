@@ -1,0 +1,77 @@
+
+Stroop Effect
+========================================================
+
+
+The Stroop effect is a demonstration of interference in the reaction time of a task. When the name of a color (e.g., "blue", "green", or "red") is printed in a color that is not denoted by the name (e.g., the word "red" printed in blue ink instead of red ink), naming the color of the word takes longer and is more prone to errors than when the color of the ink matches the name of the color.
+
+This task has two conditions: a congruent words condition, and an incongruent words condition. In the congruent words condition, the words being displayed are color words whose names match the colors in which they are printed: for example RED, BLUE. In the incongruent words condition, the words displayed are color words whose names do not match the colors in which they are printed: for example PURPLE, ORANGE. In each case, we measure the time it takes to name the ink colors.
+
+###1. What is our independent variable? What is our dependent variable?
+Here,the independent variable is the two types of conditions we applied,the congruent words condition and incongruent words condition.The dependent variable is the time it takes to name the ink colors.
+
+###2. What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? Justify your choices.
+Lets us denote MC for Population mean of Congruent and MI for Population mean of Incongruent
+
+Hypothesis for this task:
+
+1. Null Hypothesis(H0):There is no difference in population means of response time under incongruent and           congruent scenarios
+   + µC=µI(Congruent mean=Incongruent mean)
+2. Alternative Hypothesis:There is difference in population means of response time under incongruent and           congruent scenarios    
+   + µC!=µI(Congruent mean!=Incongruent mean)
+                           
+This is an dependant sample since  we have samples from the same population.Our sample size is 24 which is small.Therefore the distribution is more spread out and thicker in the tails than a normal distribution.Also,there is no population parameter in the data.So,the standard error depends on the sample.Therefore the most appropriate test to use here is t-test,two-tailed(since we are looking for an effect in either direction) at Alpha=0.05.
+
+###3. Report some descriptive statistics regarding this dataset. Include at least one measure of central tendency and at least one measure of variability.
+Lets us denote XC for mean of samples of Congruent and XI for mean of samples of Incongruent.
+
+We have,
+
+1. XC=14.05
+2. XI=22.02
+3. Standard deviation of the difference,S=4.86
+5. Number of Congruent samples,NC=24
+6. Number of Incongruent samples,NI=24
+7. Standard Error of the mean,SEM=0.99
+
+###4. Provide one or two visualizations that show the distribution of the sample data. Write one or two sentences noting what you observe about the plot or plots.
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+stroop<-read.csv('stroopdata.csv')
+library(ggplot2)
+qplot(x=Congruent,data=stroop,color=I('black'),fill=I('#0990D9'),
+      binwidth=0.2)+
+  ggtitle('Congruent')
+
+```
+
+The plot for Congruent condition shows that most people take around 12 sec and 15 sec to name the ink colors.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+qplot(x=Incongruent,data=stroop,color=I('black'),fill=I('#0990D9'),
+      binwidth=0.5)+
+  ggtitle('Incongruent')
+```
+
+The plot for Incongruent condition shows that most people takes around 21 secs to name the ink colors.It looks like the Incongruent condition takes longer take than the congruent condition.But we don't know whether there is significant difference between them.
+
+
+
+###5. Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?
+
+Statistical test:
+
+1. t-statistic,t=(+/-)8.05
+2. degrees of freedom,df=23
+3. t-critical value(alpha=0.05,two-tailed),T=(+/-)2.069.
+We observe that 8.05>2.069 and -8.05<-2.069.Therefore t-statistic lies in the critical region.
+Hence we Reject HO,ie Null Hypothesis.
+From the two samples,we observe that the conditions are significantly different.
+4. p-value is less than 0.0001.
+Since p-value is less than alpha,we reject Null Hypothesis.
+5. Confidence Level,CI=(5.92,10.02)
+6. Coefficient of determination,r^2=0.738 or 73.8% ie,73.8 % of the difference in time taken to name the ink color is due to the two conditions.
+
+Finally,the results match up with our expectations.There is a significant difference in the time taken to name the ink color in two different conditions. 
+
+
+
