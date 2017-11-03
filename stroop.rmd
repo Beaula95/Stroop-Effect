@@ -15,9 +15,9 @@ Lets us denote MC for Population mean of Congruent and MI for Population mean of
 
 Hypothesis for this task:
 
-1. Null Hypothesis(H0):There is no difference in population means of response time under incongruent and           congruent scenarios
+1. Null Hypothesis(H0):There is no difference in population means of response time under incongruent and   congruent scenarios
    + µC=µI(Congruent mean=Incongruent mean)
-2. Alternative Hypothesis:There is difference in population means of response time under incongruent and           congruent scenarios    
+2. Alternative Hypothesis:There is difference in population means of response time under incongruent and   congruent scenarios    
    + µC!=µI(Congruent mean!=Incongruent mean)
                            
 This is an dependant sample since  we have samples from the same population.Our sample size is 24 which is small.Therefore the distribution is more spread out and thicker in the tails than a normal distribution.Also,there is no population parameter in the data.So,the standard error depends on the sample.Therefore the most appropriate test to use here is t-test,two-tailed(since we are looking for an effect in either direction) at Alpha=0.05.
