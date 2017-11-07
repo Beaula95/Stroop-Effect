@@ -30,9 +30,9 @@ We have
 1. XC=14.05
 2. XI=22.02
 3. Standard deviation of the difference,S=4.86
-5. Number of Congruent samples,NC=24
-6. Number of Incongruent samples,NI=24
-7. Standard Error of the mean,SEM=0.99
+4. Number of Congruent samples,NC=24
+5. Number of Incongruent samples,NI=24
+6. Standard Error of the mean,SEM=0.99
 
 ###4. Provide one or two visualizations that show the distribution of the sample data. Write one or two sentences noting what you observe about the plot or plots.
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
